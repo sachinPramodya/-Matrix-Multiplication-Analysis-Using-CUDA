@@ -1,0 +1,5 @@
+you can enter number of iterations you want to run the code to calculate the average time.
+After that enter the matrix sizes as 32 128 256 etc
+Then press ctrl+D
+The report file will be created at output folder
+when the matrix sizes are changed block size are also changed in global memory & shared memory.

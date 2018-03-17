@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}CPU Program runtime}{3}
+\contentsline {section}{\numberline {2}GPU Global Memory Program(CUDA) runtime}{4}
+\contentsline {section}{\numberline {3}GPU Shared Memory Program(CUDA) runtime}{5}
+\contentsline {section}{\numberline {4}Comparison}{6}
+\contentsline {section}{\numberline {5}Conclusion}{7}
+\contentsline {paragraph}{\\}{7}
+\contentsline {section}{\numberline {6}References}{8}

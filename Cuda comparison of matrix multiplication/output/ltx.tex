@@ -1,0 +1,115 @@
+
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+\usepackage{lipsum}
+
+\AddToShipoutPictureBG{%
+\begin{tikzpicture}[overlay,remember picture]
+\draw[line width=4pt]
+    ($ (current page.north west) + (1cm,-1cm) $)
+    rectangle
+    ($ (current page.south east) + (-1cm,1cm) $);
+\draw[line width=1.5pt]
+    ($ (current page.north west) + (1.2cm,-1.2cm) $)
+    rectangle
+    ($ (current page.south east) + (-1.2cm,1.2cm) $);
+\end{tikzpicture}
+}
+
+\title{Matrix Multiplication Runtime}
+\author{Sachin Pramodya(CST/14/0033)}
+\begin{document}
+	\maketitle
+
+	\newpage
+
+	\tableofcontents
+
+	\newpage
+
+	\section{CPU Program runtime}
+
+	\begin{tikzpicture}
+		\begin{axis}[xlabel=N,ylabel=T(avg),legend style={at={(0.5,-0.1)},anchor=north}]
+			\addplot[color=red,mark=x] table[ignore chars={(,)},col sep=comma] {Cpu.dat};
+			\addlegendentry{$CPU$}
+		\end{axis}
+	\end{tikzpicture}
+
+	\newpage
+
+	\section{GPU Global Memory Program(CUDA) runtime}
+
+	\begin{tikzpicture}
+		\begin{axis}[xlabel=N,ylabel=T(avg),legend style={at={(0.5,-0.1)},anchor=north}]
+			\addplot[color=green,mark=x] table[ignore chars={(,)},col sep=comma] {GpuGlobal.dat};
+			\addlegendentry{$GPU (Global)$}
+		\end{axis}
+	\end{tikzpicture}
+
+	\newpage
+
+	\section{GPU Shared Memory Program(CUDA) runtime}
+
+	\begin{tikzpicture}
+		\begin{axis}[xlabel=N,ylabel=T(avg),legend style={at={(0.5,-0.1)},anchor=north}]
+			\addplot[color=blue,mark=x] table[ignore chars={(,)},col sep=comma] {GpuShared.dat};
+			\addlegendentry{$GPU (Shared)$}
+		\end{axis}
+	\end{tikzpicture}
+
+	\newpage
+
+	\section{Comparison}
+
+	\begin{tikzpicture}
+		\begin{axis}[xlabel=N,ylabel=T(avg),legend style={at={(0.5,-0.1)},anchor=north}]
+			\addplot[color=red,mark=x] table[ignore chars={(,)},col sep=comma] {Cpu.dat};
+			\addlegendentry{$CPU$}
+			\addplot[color=green,mark=x] table[ignore chars={(,)},col sep=comma] {GpuGlobal.dat};
+			\addlegendentry{$GPU (Global)$}
+			\addplot[color=blue,mark=x] table[ignore chars={(,)},col sep=comma] {GpuShared.dat};
+			\addlegendentry{$GPU (Shared)$}
+		\end{axis}
+	\end{tikzpicture}
+	
+	
+	
+	\newpage
+
+	\section{Conclusion}
+
+	\begin{paragraph}
+		   \\CPU gets the maximum time to execute the program.When compared to cpu, global memory gets less time.Shared memory is faster than this global memory also.It is the fastest one.
+		   
+	\end{paragraph}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+\newpage
+
+	\section{References}
+
+	\begin{itemize}
+	  \item https://en.wikibooks.org/wiki/LaTeX
+	  \item https://tex.stackexchange.com
+	\end{itemize}
+
+\end{document}
+
+
+\grid
